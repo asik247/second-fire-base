@@ -26,6 +26,7 @@ const Login = () => {
         signInWithPopup(auth,githubProvider)
         .then(res=>{
             setUsers(res.user)
+            console.log(res.user);
         }).catch(error=>{
             console.log(error);
         })
