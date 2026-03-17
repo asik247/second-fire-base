@@ -21,25 +21,28 @@ const Login = () => {
     }
 
     // github handler code here now;
-    const handleGithub = ()=>{
+    const handleGithub = () => {
         console.log("hanlde github btn clicked");
-        signInWithPopup(auth,githubProvider)
-        .then(res=>{
-            // setUsers(res.user)
-            const loggedUser = res.user;
-            if(!loggedUser.email){
-                if(loggedUser.providerData){
-                    const gitProvider = loggedUser.providerData.find(p=>p.providerId ==='github.com');
-                    if(gitProvider && gitProvider.email){
-                        loggedUser.email = gitProvider.email
+        signInWithPopup(auth, githubProvider)
+            .then(res => {
+                // setUsers(res.user)
+                const loggedUser = res.user;
+                if (!loggedUser.email) {
+                    if (loggedUser.providerData) {
+                        const gitProvider = loggedUser.providerData.find(p => p.providerId === 'github.com');
+                        if (gitProvider && gitProvider.email) {
+                            loggedUser.email = gitProvider.email
+                        }
                     }
                 }
-            }
-            console.log(res.user);
-            setUsers(loggedUser)
-        }).catch(error=>{
-            console.log(error);
-        })
+                /**
+                 * fist a email null so if emial na thake tile providerData ar modde jaow and onek providerData thakete pare tumi find kore 1 ta providerData paba ter por cheack korba providerId === 'github.com' hole tahole providerData.emial ta niba and set kore diba null ar jaigai;
+                 */
+                console.log(res.user);
+                setUsers(loggedUser)
+            }).catch(error => {
+                console.log(error);
+            })
     }
 
     const handleSignOut = () => {
