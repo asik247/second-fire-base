@@ -25,8 +25,18 @@ const Login = () => {
         console.log("hanlde github btn clicked");
         signInWithPopup(auth,githubProvider)
         .then(res=>{
-            setUsers(res.user)
+            // setUsers(res.user)
+            const loggedUser = res.user;
+            if(!loggedUser.email){
+                if(loggedUser.providerData){
+                    const gitProvider = loggedUser.providerData.find(p=>p.providerId ==='github.com');
+                    if(gitProvider && gitProvider.email){
+                        loggedUser.email = gitProvider.email
+                    }
+                }
+            }
             console.log(res.user);
+            setUsers(loggedUser)
         }).catch(error=>{
             console.log(error);
         })
