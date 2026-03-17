@@ -65,20 +65,21 @@ const Login = () => {
                             Sign Out
                         </button>
                     ) : (
-                        <button
-                            onClick={handleGoogle}
-                            className="w-full flex items-center justify-center  border py-2 rounded-lg hover:bg-gray-100 transition duration-300"
-                        >
-                            <svg width="30" height="20" viewBox="0 0 48 48">
-                                <path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.2 3.6l6.85-6.85C35.9 2.33 30.4 0 24 0 14.6 0 6.48 5.8 2.56 14.2l7.98 6.2C12.2 13.2 17.6 9.5 24 9.5z" />
-                                <path fill="#4285F4" d="M46.1 24.5c0-1.6-.14-3.1-.4-4.5H24v9h12.4c-.54 2.9-2.2 5.4-4.7 7l7.3 5.7c4.3-4 6.8-9.9 6.8-17.2z" />
-                                <path fill="#FBBC05" d="M10.5 28.4a14.5 14.5 0 010-8.8l-7.98-6.2A24 24 0 000 24c0 3.9.94 7.6 2.52 10.6l7.98-6.2z" />
-                                <path fill="#34A853" d="M24 48c6.4 0 11.8-2.1 15.7-5.7l-7.3-5.7c-2 1.4-4.6 2.2-8.4 2.2-6.4 0-11.8-3.7-13.7-8.9l-7.98 6.2C6.48 42.2 14.6 48 24 48z" />
-                            </svg>
-                            <span className="font-medium">
-                                Sign up with Google
-                            </span>
-                        </button>
+                        <>
+                            {/* Google Button */}
+                            <button className="btn bg-white mb-4 text-black border-[#e5e5e5]">
+                                <svg aria-label="Google logo" width="16" height="16" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><g><path d="m0 0H512V512H0" fill="#fff"></path><path fill="#34a853" d="M153 292c30 82 118 95 171 60h62v48A192 192 0 0190 341"></path><path fill="#4285f4" d="m386 400a140 175 0 0053-179H260v74h102q-7 37-38 57"></path><path fill="#fbbc02" d="m90 341a208 200 0 010-171l63 49q-12 37 0 73"></path><path fill="#ea4335" d="m153 219c22-69 116-109 179-50l55-54c-78-75-230-72-297 55"></path></g></svg>
+                                Login with Google
+                            </button>
+
+                            {/* GitHub Button */}
+                            <button className="w-full flex items-center justify-center gap-3 bg-black text-white py-2 rounded-lg hover:bg-gray-800 transition duration-300">
+                                <svg width="20" height="20" viewBox="0 0 24 24">
+                                    <path fill="white" d="M12,2A10,10 0 0,0 2,12C2,16.42 4.87,20.17 8.84,21.5C9.34,21.58 9.5,21.27 9.5,21C9.5,20.77 9.5,20.14 9.5,19.31C6.73,19.91 6.14,17.97 6.14,17.97C5.68,16.81 5.03,16.5 5.03,16.5C4.12,15.88 5.1,15.9 5.1,15.9C6.1,15.97 6.63,16.93 6.63,16.93C7.5,18.45 8.97,18 9.54,17.76C9.63,17.11 9.89,16.67 10.17,16.42C7.95,16.17 5.62,15.31 5.62,11.5C5.62,10.39 6,9.5 6.65,8.79C6.55,8.54 6.2,7.5 6.75,6.15C6.75,6.15 7.59,5.88 9.5,7.17C10.29,6.95 11.15,6.84 12,6.84C12.85,6.84 13.71,6.95 14.5,7.17C16.41,5.88 17.25,6.15 17.25,6.15C17.8,7.5 17.45,8.54 17.35,8.79C18,9.5 18.38,10.39 18.38,11.5C18.38,15.32 16.04,16.16 13.81,16.41C14.17,16.72 14.5,17.33 14.5,18.26C14.5,19.6 14.5,20.68 14.5,21C14.5,21.27 14.66,21.59 15.17,21.5C19.14,20.16 22,16.42 22,12A10,10 0 0,0 12,2Z" />
+                                </svg>
+                                Login with GitHub
+                            </button>
+                        </>
                     )
                 }
 
